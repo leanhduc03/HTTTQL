@@ -41,15 +41,12 @@ public class Menu extends javax.swing.JPanel {
 
     //Khởi tạo data cho Menu 
     public void initMenuItem() {
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/astrology.png")), "Menu - Zodiac Concept", "Aries - Bạch Dương", "Taurus - Kim Ngưu", "Gemini - Song Tử", "Cancer - Cự Giải",
-                "Leo - Sư Tử", "Virgo - Xử Nữ", "Libra - Thiên Bình", "Scorpio - Bọ Cạp", "Sagittarius - Nhân Mã", "Capricorn - Ma Kết", "Aquarius - Bảo Bình", "Pisces - Song Ngư"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/astrology.png")), "Thực đơn", "Gà", "Vịt", "Ếch", "Bò",
+                "Bò", "Hải Sản", "Rau", "Lẩu", "Nướng", "Khai vị", "Đồ uống", "Tráng miệng"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/table.png")), "Đặt bàn", "Tầng 1", "Tầng 2", "Tầng 3"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/information.png")), "About US"));
         addMenu(new ModelMenu(null, ""));
-        addMenu(new ModelMenu(null, "Thông tin cá nhân"));
         addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/user.png")), "Tài Khoản"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/star.png")), "Điểm tích lũy"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/invoice.png")), "Lịch sử hóa đơn"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/logout.png")), "Đăng Xuất"));
     }
@@ -113,7 +110,7 @@ public class Menu extends javax.swing.JPanel {
         logo.setForeground(new java.awt.Color(255, 255, 255));
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/restaurant (1).png"))); // NOI18N
-        logo.setText("<html> Royal TheDreamers <br> Restaurant ★★★★★</html>");
+        logo.setText("<html>   <div style=\"text-align: center;\">     Nhà hàng Quen Loan <br>     🍽️Xin kính chào🍽️️<br>️🍽️️quý khách️🍽️️</div> </html> ");
         logo.setIconTextGap(15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -121,13 +118,13 @@ public class Menu extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sp, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+            .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sp, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -137,7 +134,7 @@ public class Menu extends javax.swing.JPanel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint gp= new GradientPaint(0, 0, Color.decode("#516395"), 0, getHeight(), Color.decode("#614385"));
+        GradientPaint gp= new GradientPaint(0, 0, Color.decode("#B85B56"), 0, getHeight(), Color.decode("#FEA837"));
         g2.setPaint(gp);
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
         g2.fillRect(0, 0, getWidth(), getHeight());

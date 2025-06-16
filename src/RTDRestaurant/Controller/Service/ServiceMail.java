@@ -20,17 +20,17 @@ public class ServiceMail {
     public ModelMessage sendMain(String toEmail, String code) {
         ModelMessage ms = new ModelMessage(false, "");
         //Email người gửi
-        String from = "thedreamersrestaurant@gmail.com";
+        String from = "b21dccn241@gmail.com";
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");
         prop.put("mail.smtp.starttls.enable", "true");
 
-        String username = "thedreamersrestaurant@gmail.com";//Email nhà hàng
+        String username = "b21dccn241@gmail.com";//Email nhà hàng
         //Mật khẩu :thedreamers123456
         //App password :zklylvvnbkptvrhc
-        String password = "zklylvvnbkptvrhc";    //  Mật khẩu email nhà hàng
+        String password = "ahpsggsfbiukhilz";    //  Mật khẩu email nhà hàng
         Session session = Session.getInstance(prop, new javax.mail.Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {

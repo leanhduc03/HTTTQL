@@ -43,7 +43,7 @@ public class CardBan extends javax.swing.JPanel {
                 });
             }
             case "Dang dung bua" -> {
-                img.setBackground(Color.decode("#605C3C"));
+                img.setBackground(Color.decode("#FFE000"));
                 cmdBook.setText("KHÔNG THỂ ĐẶT");
                 cmdBook.setBackground(Color.decode("#232526"));
                 cmdBook.setEnabled(false);

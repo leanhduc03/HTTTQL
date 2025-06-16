@@ -48,8 +48,8 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         show = new ImageIcon(getClass().getResource("/Icons/view.png"));
         initLogin(eventLogin);
         initRegister(eventRegister);
-        register.setVisible(true);
-        login.setVisible(false);    
+        register.setVisible(false);
+        login.setVisible(true);    
     }
 
     //Khởi tạo màn hình đăng ký
@@ -60,7 +60,7 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         //Label
         JLabel label = new JLabel("TẠO TÀI KHOẢN");
         label.setFont(new Font("sansserif", 1, 30));
-        label.setForeground(Color.decode("#6C5B7B"));
+        label.setForeground(Color.decode("#FEA837"));
         register.add(label);
         //TextField Tên Khách Hàng
         MyTextField txtUser = new MyTextField();
@@ -95,7 +95,7 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         });
         //Button Đăng ký
         Button cmd = new Button();
-        cmd.setBackground(Color.decode("#6C5B7B"));
+        cmd.setBackground(Color.decode("#FEA837"));
         cmd.setForeground(new Color(250, 250, 250));
         cmd.setText("ĐĂNG KÝ");
         //Add Event cho Button "Đăng ký"
@@ -119,7 +119,7 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         login.setLayout(new MigLayout("wrap", "push[center]push", "push[]25[]10[]10[]25[]push"));
         JLabel label = new JLabel("ĐĂNG NHẬP");
         label.setFont(new Font("sansserif", 1, 30));
-        label.setForeground(Color.decode("#6C5B7B"));
+        label.setForeground(Color.decode("#FEA837"));
         login.add(label);
         //TextField Email
         MyTextField txtEmail = new MyTextField();
@@ -156,7 +156,7 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         login.add(cmdForget);
         //Button "ĐĂNG NHẬP"
         Button cmd = new Button();
-        cmd.setBackground(Color.decode("#6C5B7B"));
+        cmd.setBackground(Color.decode("#FEA837"));
         cmd.setForeground(new Color(250, 250, 250));
         cmd.setText("ĐĂNG NHẬP");
         login.add(cmd, "w 40%, h 40");
@@ -216,11 +216,11 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
 
     public void showRegister(boolean show) {
         if (show) {
-            register.setVisible(true);
-            login.setVisible(false);
-        } else {
             register.setVisible(false);
             login.setVisible(true);
+        } else {
+            register.setVisible(true);
+            login.setVisible(false);
         }
     }
 

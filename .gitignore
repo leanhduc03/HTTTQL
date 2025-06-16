@@ -1,2 +1,77 @@
-/dist/
-/src/RTDRestaurant/Controller/Connection/DataBaseConnection.java
+# File đã biên dịch
+*.class
+
+# File log
+*.log
+
+# File cấu hình BlueJ
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# File đóng gói
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Log lỗi máy ảo
+hs_err_pid*
+replay_pid*
+
+# File IDE và editor
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+.metadata/
+nbproject/
+nb-configuration.xml
+
+# Thư mục build
+target/
+build/
+out/
+bin/
+dist/
+
+# File cấu hình cục bộ
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
+config.properties
+
+# File database cục bộ
+*.db
+*.sqlite
+*.sqlite3
+
+# File cấu hình chứa thông tin nhạy cảm
+database.properties
+application.properties
+credentials.json
+
+# Thư mục dependencies
+lib/
+node_modules/
+
+# File backup
+*~
+*.bak
+*.swp
+*.swo
+
+# File cache
+.gradle/
+.mvn/
+dist/
+src/RTDRestaurant/Controller/Connection/DataBaseConnection.java

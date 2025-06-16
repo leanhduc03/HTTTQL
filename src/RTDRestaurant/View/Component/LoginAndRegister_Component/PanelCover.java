@@ -42,7 +42,7 @@ public class PanelCover extends javax.swing.JPanel {
        
         logo= new ImageLogo();
         logo.setPreferredSize(new Dimension(250,250));
-        logo.setIcon(new ImageIcon(getClass().getResource("/Icons/logo_register.png")));
+        logo.setIcon(new ImageIcon(getClass().getResource("/Icons/logo_login.png")));
         add(logo);
         
         title= new JLabel("Chào mừng bạn đến với nhà hàng");
@@ -50,7 +50,7 @@ public class PanelCover extends javax.swing.JPanel {
         title.setForeground(new Color(245,245,245));
         add(title);
         
-        subtitle= new JLabel("Royal TheDreamers");
+        subtitle= new JLabel("Quen Loan");
         subtitle.setFont(new Font("sansserif",1,28));
         subtitle.setForeground(new Color(245,245,245));
         add(subtitle);
@@ -66,7 +66,7 @@ public class PanelCover extends javax.swing.JPanel {
         button = new ButtonOutLine();
         button.setBackground(new Color(255,255,255));
         button.setForeground(new Color(255,255,255));
-        button.setText("<<  Đăng nhập");
+        button.setText("<<  Đăng ký");
         //Add Event cho Button "Đăng nhập"
         button.addActionListener(new ActionListener(){
             @Override
@@ -98,7 +98,7 @@ public class PanelCover extends javax.swing.JPanel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint gp = new GradientPaint(0, 0, Color.decode("#C06C84"), 0, getHeight(), Color.decode("#6C5B7B"));
+        GradientPaint gp = new GradientPaint(0, 0, Color.decode("#B85B56"), 0, getHeight(), Color.decode("#FEA837"));
         g2.setPaint(gp);
         g2.fillRect(0, 0, getWidth(), getHeight());
         super.paintComponent(g);
@@ -151,14 +151,14 @@ public class PanelCover extends javax.swing.JPanel {
                 title.setText("Bạn chưa có tài khoản tại");
                 description.setText("Đừng lo, tạo mới một tài khoản");
                 description1.setText("và bắt đầu trải nghiệm của bạn với nhà hàng chúng tôi");
-                button.setText("Đăng ký  >>");
+                button.setText("Đăng nhập  >>");
             }else{
                 //Set Data cho Panel cover khi ở màn hình đăng ký
-                logo.setIcon(new ImageIcon(getClass().getResource("/Icons/logo_register.png")));
+                logo.setIcon(new ImageIcon(getClass().getResource("/Icons/logo_login.png")));
                 title.setText("Chào mừng bạn đến với nhà hàng");
                 description.setText("Để sử dụng dịch vụ tại đây vui lòng");
                 description1.setText("đăng nhập với tài khoản cá nhân của bạn");
-                button.setText("<<  Đăng nhập");
+                button.setText("<<  Đăng ký");
             }
             this.isLogin=login;
         }

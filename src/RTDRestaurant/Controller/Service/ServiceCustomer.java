@@ -244,6 +244,10 @@ public class ServiceCustomer {
         p.setInt(2, customer.getID_KH());
         p.setInt(3, table.getID());
         p.setString(4, simpleDateFormat.format(new Date()));
+        javax.swing.JOptionPane.showMessageDialog(null, 
+        "Đặt bàn thành công!", 
+        "Thông báo", 
+        javax.swing.JOptionPane.INFORMATION_MESSAGE);
         p_ID.close();
         r_id.close();
         p.execute();

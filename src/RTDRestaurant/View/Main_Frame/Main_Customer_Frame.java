@@ -28,7 +28,7 @@ public class Main_Customer_Frame extends javax.swing.JFrame {
     public Main_Customer_Frame() throws HeadlessException {
         initComponents();
         init();
-        setTitle("Royal TheDreamers Restaurant");
+        setTitle("Nhà hàng Quen Loan");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icons/restaurant (1).png")));
     }
     
@@ -36,7 +36,7 @@ public class Main_Customer_Frame extends javax.swing.JFrame {
         this.user=user;
         initComponents();
         init();
-        setTitle("Royal TheDreamers Restaurant");
+        setTitle("Nhà hàng Quen Loan");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icons/restaurant (1).png")));
     }
     
