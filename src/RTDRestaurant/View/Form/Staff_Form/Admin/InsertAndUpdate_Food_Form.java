@@ -198,7 +198,7 @@ public class InsertAndUpdate_Food_Form extends javax.swing.JPanel {
             }
         });
 
-        cmdStop.setBackground(new java.awt.Color(108, 91, 123));
+        cmdStop.setBackground(new java.awt.Color(210, 82, 20));
         cmdStop.setForeground(new java.awt.Color(255, 255, 255));
         cmdStop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/no-food.png"))); // NOI18N
         cmdStop.setText("NGƯNG KINH DOANH");

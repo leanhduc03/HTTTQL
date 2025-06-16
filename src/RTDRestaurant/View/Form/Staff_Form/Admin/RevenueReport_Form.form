@@ -112,30 +112,30 @@
         <Component class="RTDRestaurant.View.Component.Admin_Component.Card" name="Crevenue">
           <Properties>
             <Property name="color1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="a3" green="4e" red="65" type="rgb"/>
+              <Color blue="d2" green="4d" red="14" type="rgb"/>
             </Property>
             <Property name="color2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c8" green="af" red="ea" type="rgb"/>
+              <Color blue="e6" green="b1" red="9a" type="rgb"/>
             </Property>
           </Properties>
         </Component>
         <Component class="RTDRestaurant.View.Component.Admin_Component.Card" name="Cexpenses">
           <Properties>
             <Property name="color1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ca" green="de" red="6d" type="rgb"/>
+              <Color blue="7d" green="26" red="e8" type="rgb"/>
             </Property>
             <Property name="color2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cb" green="a8" red="89" type="rgb"/>
+              <Color blue="b6" green="8c" red="ea" type="rgb"/>
             </Property>
           </Properties>
         </Component>
         <Component class="RTDRestaurant.View.Component.Admin_Component.Card" name="Cprofit">
           <Properties>
             <Property name="color1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="40" green="31" red="23" type="rgb"/>
+              <Color blue="47" green="ef" red="1f" type="rgb"/>
             </Property>
             <Property name="color2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="90" green="85" red="3d" type="rgb"/>
+              <Color blue="9d" green="f7" red="88" type="rgb"/>
             </Property>
           </Properties>
         </Component>

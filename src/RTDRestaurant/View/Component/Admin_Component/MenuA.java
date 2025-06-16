@@ -42,13 +42,12 @@ public class MenuA extends javax.swing.JPanel {
     //Khởi tạo data cho Menu 
     public void initMenuItem() {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/menu.png")), "Quản lý Thực Đơn"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/staff.png")), "Quản lý Nhân Sự"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/analytics.png")), "Báo cáo Doanh Thu"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/bill.png")), "Thống kê Hóa Đơn"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/inventory.png")), "Thống kê Nhập Kho"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/customer.png")), "Thông tin Khách Hàng"));
         addMenu(new ModelMenu(null, ""));
-        addMenu(new ModelMenu(null, "Thông tin cá nhân"));
+        addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/user.png")), "Tài Khoản"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/logout.png")), "Đăng Xuất"));
@@ -113,7 +112,7 @@ public class MenuA extends javax.swing.JPanel {
         logo.setForeground(new java.awt.Color(255, 255, 255));
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/businessman.png"))); // NOI18N
-        logo.setText("<html>Quản lý<br> Nhà Hàng Quen Loan </html>");
+        logo.setText("<html>Quản lý<br> Nhà hàng Quen Loan</html>");
         logo.setIconTextGap(15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -137,7 +136,7 @@ public class MenuA extends javax.swing.JPanel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint gp= new GradientPaint(0, 0, Color.decode("#928199"), 0, getHeight(), Color.decode("#847589"));
+        GradientPaint gp= new GradientPaint(0, 0, Color.decode("#d25214"), 0, getHeight(), Color.decode("#ea946b"));
         g2.setPaint(gp);
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
         g2.fillRect(0, 0, getWidth(), getHeight());

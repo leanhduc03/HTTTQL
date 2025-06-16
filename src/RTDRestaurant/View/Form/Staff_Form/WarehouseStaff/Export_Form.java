@@ -181,13 +181,13 @@ public class Export_Form extends javax.swing.JPanel {
             tablePXK.getColumnModel().getColumn(2).setPreferredWidth(100);
         }
 
-        cmdAdd.setBackground(new java.awt.Color(108, 91, 123));
+        cmdAdd.setBackground(new java.awt.Color(210, 82, 20));
         cmdAdd.setForeground(new java.awt.Color(255, 255, 255));
         cmdAdd.setText("Thêm PXK");
         cmdAdd.setFocusable(false);
         cmdAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        cmdCT.setBackground(new java.awt.Color(108, 91, 123));
+        cmdCT.setBackground(new java.awt.Color(210, 82, 20));
         cmdCT.setForeground(new java.awt.Color(255, 255, 255));
         cmdCT.setText("Chi tiết PXK");
         cmdCT.setFocusable(false);

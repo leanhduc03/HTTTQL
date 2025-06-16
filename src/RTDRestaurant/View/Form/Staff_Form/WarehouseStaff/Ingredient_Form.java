@@ -185,7 +185,7 @@ public class Ingredient_Form extends javax.swing.JPanel {
             tableNL.getColumnModel().getColumn(2).setPreferredWidth(100);
         }
 
-        cmdAdd.setBackground(new java.awt.Color(108, 91, 123));
+        cmdAdd.setBackground(new java.awt.Color(210, 82, 20));
         cmdAdd.setForeground(new java.awt.Color(255, 255, 255));
         cmdAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/plus.png"))); // NOI18N
         cmdAdd.setText("THÊM NLIỆU");
@@ -193,7 +193,7 @@ public class Ingredient_Form extends javax.swing.JPanel {
         cmdAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cmdAdd.setIconTextGap(10);
 
-        cmdUpdate.setBackground(new java.awt.Color(108, 91, 123));
+        cmdUpdate.setBackground(new java.awt.Color(210, 82, 20));
         cmdUpdate.setForeground(new java.awt.Color(255, 255, 255));
         cmdUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/change.png"))); // NOI18N
         cmdUpdate.setText("SỬA NLIỆU");
@@ -201,7 +201,7 @@ public class Ingredient_Form extends javax.swing.JPanel {
         cmdUpdate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cmdUpdate.setIconTextGap(10);
 
-        cmdDelete.setBackground(new java.awt.Color(108, 91, 123));
+        cmdDelete.setBackground(new java.awt.Color(210, 82, 20));
         cmdDelete.setForeground(new java.awt.Color(255, 255, 255));
         cmdDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/bin (1).png"))); // NOI18N
         cmdDelete.setText("XÓA NLIỆU");

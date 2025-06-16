@@ -46,7 +46,7 @@ public class MenuStaff extends javax.swing.JPanel {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/import.png")), "Quản lý Nhập Kho"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/export.png")), "Quản lý Xuất Kho"));
         addMenu(new ModelMenu(null, ""));
-        addMenu(new ModelMenu(null, "Thông tin cá nhân"));
+        addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/user.png")), "Tài Khoản"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/logout.png")), "Đăng Xuất"));
@@ -111,7 +111,7 @@ public class MenuStaff extends javax.swing.JPanel {
         logo.setForeground(new java.awt.Color(255, 255, 255));
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/warehouse.png"))); // NOI18N
-        logo.setText("<html>Warehouse Management<br> Restaurant ★★★★★</html>");
+        logo.setText("<html>Quản lý kho<br> Nhà hàng Quen Loan</html>");
         logo.setIconTextGap(15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -137,7 +137,7 @@ public class MenuStaff extends javax.swing.JPanel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint gp= new GradientPaint(0, 0, Color.decode("#4B79A1"), 0, getHeight(), Color.decode("#283E51"));
+        GradientPaint gp= new GradientPaint(0, 0, Color.decode("#d25214"), 0, getHeight(), Color.decode("#ea946b"));
         g2.setPaint(gp);
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
         g2.fillRect(0, 0, getWidth(), getHeight());

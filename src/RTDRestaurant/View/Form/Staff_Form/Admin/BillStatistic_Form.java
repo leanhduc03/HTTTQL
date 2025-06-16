@@ -198,7 +198,7 @@ public class BillStatistic_Form extends javax.swing.JPanel {
             }
         });
 
-        cmdCTHD.setBackground(new java.awt.Color(108, 91, 123));
+        cmdCTHD.setBackground(new java.awt.Color(210, 82, 20));
         cmdCTHD.setForeground(new java.awt.Color(255, 255, 255));
         cmdCTHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/clipboard.png"))); // NOI18N
         cmdCTHD.setText("XEM CTHĐ");
@@ -210,7 +210,7 @@ public class BillStatistic_Form extends javax.swing.JPanel {
             }
         });
 
-        cmdExcel.setBackground(new java.awt.Color(108, 91, 123));
+        cmdExcel.setBackground(new java.awt.Color(210, 82, 20));
         cmdExcel.setForeground(new java.awt.Color(255, 255, 255));
         cmdExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/excel.png"))); // NOI18N
         cmdExcel.setText("XUẤT FILE EXCEL");

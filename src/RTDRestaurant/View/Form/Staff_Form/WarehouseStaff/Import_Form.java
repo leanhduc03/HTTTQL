@@ -186,17 +186,23 @@ public class Import_Form extends javax.swing.JPanel {
             tablePNK.getColumnModel().getColumn(2).setPreferredWidth(100);
         }
 
-        cmdAdd.setBackground(new java.awt.Color(108, 91, 123));
+        cmdAdd.setBackground(new java.awt.Color(210, 82, 20));
         cmdAdd.setForeground(new java.awt.Color(255, 255, 255));
         cmdAdd.setText("Thêm PNK");
+        cmdAdd.setAutoscrolls(true);
         cmdAdd.setFocusable(false);
         cmdAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        cmdCT.setBackground(new java.awt.Color(108, 91, 123));
+        cmdCT.setBackground(new java.awt.Color(210, 82, 20));
         cmdCT.setForeground(new java.awt.Color(255, 255, 255));
         cmdCT.setText("Chi tiết PNK");
         cmdCT.setFocusable(false);
         cmdCT.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cmdCT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCTActionPerformed(evt);
+            }
+        });
 
         lbDate.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         lbDate.setForeground(new java.awt.Color(108, 91, 123));
@@ -268,6 +274,10 @@ public class Import_Form extends javax.swing.JPanel {
 
         searchTable(txtSearch.getText().trim());
     }//GEN-LAST:event_txtSearchMouseEntered
+
+    private void cmdCTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmdCTActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

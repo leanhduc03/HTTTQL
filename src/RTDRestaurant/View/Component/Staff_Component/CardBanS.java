@@ -100,7 +100,7 @@ public class CardBanS extends javax.swing.JPanel {
         lbValue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbValue.setText("Value");
 
-        cmdAdj.setBackground(new java.awt.Color(108, 91, 123));
+        cmdAdj.setBackground(new java.awt.Color(210, 82, 20));
         cmdAdj.setForeground(new java.awt.Color(255, 255, 255));
         cmdAdj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/levels.png"))); // NOI18N
         cmdAdj.setText("TÙY CHỈNH");

@@ -184,12 +184,17 @@ public class OrderFood_Form extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(108, 91, 123));
         jLabel1.setText("Sắp xếp theo");
 
-        cmdShowBill.setBackground(new java.awt.Color(108, 91, 123));
+        cmdShowBill.setBackground(new java.awt.Color(210, 82, 20));
         cmdShowBill.setForeground(new java.awt.Color(255, 255, 255));
         cmdShowBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/clipboard.png"))); // NOI18N
         cmdShowBill.setText("XEM HÓA ĐƠN");
         cmdShowBill.setFocusable(false);
         cmdShowBill.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmdShowBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdShowBillActionPerformed(evt);
+            }
+        });
 
         lbTable.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbTable.setForeground(new java.awt.Color(89, 89, 89));
@@ -322,6 +327,10 @@ public class OrderFood_Form extends javax.swing.JPanel {
     private void cmdBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdBackMouseClicked
         main.showForm(new TableMenuS_Form("Tang 1", user, main));
     }//GEN-LAST:event_cmdBackMouseClicked
+
+    private void cmdShowBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdShowBillActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmdShowBillActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

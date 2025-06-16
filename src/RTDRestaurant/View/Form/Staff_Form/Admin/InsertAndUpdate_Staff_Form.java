@@ -237,7 +237,7 @@ public class InsertAndUpdate_Staff_Form extends javax.swing.JPanel {
         txtmaNQL.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtmaNQL.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
 
-        cmdKick.setBackground(new java.awt.Color(108, 91, 123));
+        cmdKick.setBackground(new java.awt.Color(210, 82, 20));
         cmdKick.setForeground(new java.awt.Color(255, 255, 255));
         cmdKick.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/job.png"))); // NOI18N
         cmdKick.setText("SA THẢI");

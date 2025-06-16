@@ -196,7 +196,7 @@ public class ImportStatistic_Form extends javax.swing.JPanel {
             }
         });
 
-        cmdCTNK.setBackground(new java.awt.Color(108, 91, 123));
+        cmdCTNK.setBackground(new java.awt.Color(210, 82, 20));
         cmdCTNK.setForeground(new java.awt.Color(255, 255, 255));
         cmdCTNK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/clipboard.png"))); // NOI18N
         cmdCTNK.setText("XEM CTNK");
@@ -208,7 +208,7 @@ public class ImportStatistic_Form extends javax.swing.JPanel {
             }
         });
 
-        cmdExcel.setBackground(new java.awt.Color(108, 91, 123));
+        cmdExcel.setBackground(new java.awt.Color(210, 82, 20));
         cmdExcel.setForeground(new java.awt.Color(255, 255, 255));
         cmdExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/excel.png"))); // NOI18N
         cmdExcel.setText("XUẤT FILE EXCEL");

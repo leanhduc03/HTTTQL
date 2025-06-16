@@ -204,12 +204,13 @@
     <Component class="RTDRestaurant.View.Swing.Button" name="cmdAdd">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="7b" green="5b" red="6c" type="rgb"/>
+          <Color blue="14" green="52" red="d2" type="rgb"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Th&#xea;m PNK"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="focusable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -219,7 +220,7 @@
     <Component class="RTDRestaurant.View.Swing.Button" name="cmdCT">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="7b" green="5b" red="6c" type="rgb"/>
+          <Color blue="14" green="52" red="d2" type="rgb"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -230,6 +231,9 @@
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdCTActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbDate">
       <Properties>

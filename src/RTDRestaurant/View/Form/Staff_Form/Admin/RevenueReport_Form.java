@@ -88,9 +88,9 @@ public class RevenueReport_Form extends javax.swing.JPanel {
     }
 
     public void initChart() {
-        lineChart.addLegend("Doanh thu", new Color(101, 78, 163), new Color(101, 78, 163));
-        lineChart.addLegend("Chi Phí", new Color(109, 222, 202), new Color(109, 222, 202));
-        lineChart.addLegend("Lợi nhuận", new Color(35, 49, 64), new Color(35, 49, 64));
+        lineChart.addLegend("Doanh thu", new Color(20, 77, 210), new Color(20, 77, 210));
+        lineChart.addLegend("Chi Phí", new Color(232, 38, 125), new Color(232, 38, 125));
+        lineChart.addLegend("Lợi nhuận", new Color(31, 239, 71), new Color(31, 239, 71));
         try {
             list = service.getRevenueCostProfit_byMonth();
             for (ModelChart data : list) {
@@ -139,16 +139,16 @@ public class RevenueReport_Form extends javax.swing.JPanel {
 
         panelCard.setLayout(new java.awt.GridLayout(1, 0, 10, 0));
 
-        Crevenue.setColor1(new java.awt.Color(101, 78, 163));
-        Crevenue.setColor2(new java.awt.Color(234, 175, 200));
+        Crevenue.setColor1(new java.awt.Color(20, 77, 210));
+        Crevenue.setColor2(new java.awt.Color(154, 177, 230));
         panelCard.add(Crevenue);
 
-        Cexpenses.setColor1(new java.awt.Color(109, 222, 202));
-        Cexpenses.setColor2(new java.awt.Color(137, 168, 203));
+        Cexpenses.setColor1(new java.awt.Color(232, 38, 125));
+        Cexpenses.setColor2(new java.awt.Color(234, 140, 182));
         panelCard.add(Cexpenses);
 
-        Cprofit.setColor1(new java.awt.Color(35, 49, 64));
-        Cprofit.setColor2(new java.awt.Color(61, 133, 144));
+        Cprofit.setColor1(new java.awt.Color(31, 239, 71));
+        Cprofit.setColor2(new java.awt.Color(136, 247, 157));
         panelCard.add(Cprofit);
 
         lbDate.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N

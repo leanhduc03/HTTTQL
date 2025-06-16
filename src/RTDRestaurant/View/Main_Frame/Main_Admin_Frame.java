@@ -51,27 +51,23 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
                 switch (menuIndex) {
                     case 0 -> {
                         main.showForm(new MenuManagement_Form(main));
-                    }
+                    }                  
                     case 1 -> {
-                       main.showForm(new StaffManagement_Form(user,main));
-                    }
-                    
-                    case 2 -> {
                         main.showForm(new RevenueReport_Form());
                     }
-                    case 3 -> {
+                    case 2 -> {
                         main.showForm(new BillStatistic_Form(main));
                     }
-                    case 4 -> {
+                    case 3 -> {
                         main.showForm(new ImportStatistic_Form(main));
                     }
-                    case 5 -> {
+                    case 4 -> {
                         main.showForm(new CusInformation_Form(main));
                     }
-                    case 9 -> {
+                    case 8 -> {
                         main.showForm(new AccountS_Form(user));
                     }
-                    case 10 -> {
+                    case 9 -> {
                         dispose();
                         Main_LoginAndRegister.main();
                     }

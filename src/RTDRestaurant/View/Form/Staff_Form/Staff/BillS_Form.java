@@ -167,7 +167,7 @@ public class BillS_Form extends javax.swing.JPanel {
         jSeparator3.setBackground(new java.awt.Color(76, 76, 76));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        cmdExportBill.setBackground(new java.awt.Color(108, 91, 123));
+        cmdExportBill.setBackground(new java.awt.Color(210, 82, 20));
         cmdExportBill.setForeground(new java.awt.Color(255, 255, 255));
         cmdExportBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/receipt.png"))); // NOI18N
         cmdExportBill.setText("XUẤT HÓA ĐƠN");

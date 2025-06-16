@@ -86,7 +86,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Icons/information-desk.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;Royal Receptionist&lt;br&gt; Restaurant &#x2605;&#x2605;&#x2605;&#x2605;&#x2605;&lt;/html&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;Nh&#xe2;n vi&#xea;n&lt;br&gt;Nh&#xe0; h&#xe0;ng Quen Loan&lt;/html&gt;"/>
         <Property name="iconTextGap" type="int" value="15"/>
       </Properties>
     </Component>
