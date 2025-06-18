@@ -24,6 +24,7 @@ public class MS_ConfirmReserve extends javax.swing.JDialog {
     private boolean show = true;
     private Frame frame;
     private ServiceStaff service;
+    private ModelBan currentTable;
 
     public MS_ConfirmReserve(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -56,20 +57,10 @@ public class MS_ConfirmReserve extends javax.swing.JDialog {
     }
 
     public void ConfirmReserve(ModelBan table) {
+        this.currentTable = table; // Lưu bàn được chọn
         setLocationRelativeTo(frame);
-        lbMessage.setText("Mã Bàn: "+table.getID()+" - Tên Bàn: "+table.getName());
+        lbMessage.setText("Mã Bàn: " + table.getID() + " - Tên Bàn: " + table.getName());
         animator.start();
-        cmdOK.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    service.setTableReserve(table.getID());
-                } catch (SQLException ex) {
-                    Logger.getLogger(MS_ConfirmReserve.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-
-        });
         setVisible(true);
     }
 
@@ -220,7 +211,28 @@ public class MS_ConfirmReserve extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdOKActionPerformed
-        closeMenu();
+        String name = myTextField1.getText().trim();
+        String phone = myTextField2.getText().trim();
+
+        if (name.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Thiếu thông tin khách hàng!", "Thông báo", javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (phone.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Thiếu thông tin khách hàng!", "Thông báo", javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            service.setTableReserve(currentTable.getID()); // Gọi service nếu hợp lệ
+            javax.swing.JOptionPane.showMessageDialog(this, "Đặt bàn thành công!", "Thông báo", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(MS_ConfirmReserve.class.getName()).log(Level.SEVERE, null, ex);
+            javax.swing.JOptionPane.showMessageDialog(this, "Lỗi khi đặt bàn!", "Lỗi", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+
+        closeMenu(); // Đóng dialog
     }//GEN-LAST:event_cmdOKActionPerformed
 
     private void cmdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelActionPerformed
