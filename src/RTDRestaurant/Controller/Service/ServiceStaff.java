@@ -48,6 +48,7 @@ public class ServiceStaff {
         p.close();
         return data;
     }
+
     // Đổi tên Khách hàng 
     public void reNameStaff(ModelNhanVien data) throws SQLException {
         String sql = "UPDATE NhanVien SET TenNV=? WHERE ID_NV=?";
@@ -57,6 +58,7 @@ public class ServiceStaff {
         p.execute();
         p.close();
     }
+
     //Lấy toàn bộ danh sách nguyên liệu
     public ArrayList<ModelNguyenLieu> MenuNL() throws SQLException {
         ArrayList<ModelNguyenLieu> list = new ArrayList<>();
@@ -434,6 +436,10 @@ public class ServiceStaff {
         String sql = "UPDATE BAN SET TrangThai = 'Da dat truoc' WHERE ID_Ban=?";
         PreparedStatement p = con.prepareStatement(sql);
         p.setInt(1, idBan);
+        javax.swing.JOptionPane.showMessageDialog(null,
+                "Đặt bàn thành công!",
+                "Thông báo",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
         p.execute();
         p.close();
     }
@@ -443,6 +449,10 @@ public class ServiceStaff {
         String sql = "UPDATE BAN SET TrangThai = 'Con trong' WHERE ID_Ban=?";
         PreparedStatement p = con.prepareStatement(sql);
         p.setInt(1, idBan);
+        javax.swing.JOptionPane.showMessageDialog(null,
+                "Hủy bàn thành công!",
+                "Thông báo",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
         p.execute();
         p.close();
     }
