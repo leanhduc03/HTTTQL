@@ -23,7 +23,7 @@ public class Main_Staff_Frame extends javax.swing.JFrame {
     public Main_Staff_Frame() throws HeadlessException {
         initComponents();
         init();
-        setTitle("Royal TheDreamers Restaurant");
+        setTitle("Nhà Hàng Quen Loan");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icons/restaurant (1).png")));
     }
 
@@ -31,7 +31,7 @@ public class Main_Staff_Frame extends javax.swing.JFrame {
         this.user = user;
         initComponents();
         init();
-        setTitle("Royal TheDreamers Restaurant");
+        setTitle("Nhà Hàng Quen Loan");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icons/information-desk.png")));
     }
 

@@ -209,7 +209,7 @@
     <Component class="RTDRestaurant.View.Swing.Button" name="cmdShowBill">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="7b" green="5b" red="6c" type="rgb"/>
+          <Color blue="14" green="52" red="d2" type="rgb"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -223,6 +223,9 @@
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdShowBillActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbTable">
       <Properties>

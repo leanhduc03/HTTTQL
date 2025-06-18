@@ -44,7 +44,7 @@ public class MenuS extends javax.swing.JPanel {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/table.png")), "Quản lý Bàn", "Tầng 1", "Tầng 2", "Tầng 3"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/customer.png")), "Thông tin Khách Hàng"));
         addMenu(new ModelMenu(null, ""));
-        addMenu(new ModelMenu(null, "Thông tin cá nhân"));
+        addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/user.png")), "Tài Khoản"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/logout.png")), "Đăng Xuất"));
@@ -109,7 +109,7 @@ public class MenuS extends javax.swing.JPanel {
         logo.setForeground(new java.awt.Color(255, 255, 255));
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/information-desk.png"))); // NOI18N
-        logo.setText("<html>Royal Receptionist<br> Restaurant ★★★★★</html>");
+        logo.setText("<html>Nhà Hàng<br> Quen Loan ★★★★★</html>");
         logo.setIconTextGap(15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

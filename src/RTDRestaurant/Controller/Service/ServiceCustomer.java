@@ -26,66 +26,117 @@ public class ServiceCustomer {
     }
 
     //Lấy toàn bộ danh sách Món ăn theo loại Món Ăn đang kinh doanh
-    public ArrayList<ModelMonAn> MenuFood(String type) throws SQLException {
-        ArrayList<ModelMonAn> list = new ArrayList<>();
-        String sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh'";
-        PreparedStatement p = con.prepareStatement(sql);
-        p.setString(1, type);
-        ResultSet r = p.executeQuery();
-        while (r.next()) {
-            int id = r.getInt("ID_MonAn");
-            String name = r.getString("TenMon");
-            int value = r.getInt("DonGia");
-            ModelMonAn data;
-            if (id < 90) {
-                data = new ModelMonAn(new ImageIcon(getClass().getResource("/Icons/Food/" + type + "/" + id + ".jpg")), id, name, value, type);
+public ArrayList<ModelMonAn> MenuFood(String type) throws SQLException {
+    ArrayList<ModelMonAn> list = new ArrayList<>();
+    String sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh'";
+    PreparedStatement p = con.prepareStatement(sql);
+    p.setString(1, type);
+    ResultSet r = p.executeQuery();
+    while (r.next()) {
+        int id = r.getInt("ID_MonAn");
+        String name = r.getString("TenMon");
+        int value = r.getInt("DonGia");
+        
+        // Tạo đường dẫn tương đối đến ảnh
+        String imagePath = "/Icons/Food/" + type + "/" + id + ".jpg";
+        ImageIcon icon = null;
+        
+        try {
+            // Tải ảnh mới mỗi lần bằng cách dùng URL và đọc trực tiếp từ file
+            java.net.URL imageUrl = getClass().getResource(imagePath);
+            if (imageUrl != null) {
+                // Đọc ảnh từ URL để tránh cache
+                java.awt.Image img = javax.imageio.ImageIO.read(imageUrl);
+                icon = new ImageIcon(img);
             } else {
-                data = new ModelMonAn(new ImageIcon(getClass().getResource("/Icons/Food/Unknown/unknown.jpg")), id, name, value, type);
+                // Nếu không tìm thấy, sử dụng ảnh mặc định
+                java.net.URL defaultUrl = getClass().getResource("/Icons/Food/" + type + "/default.jpg");
+                if (defaultUrl != null) {
+                    java.awt.Image defaultImg = javax.imageio.ImageIO.read(defaultUrl);
+                    icon = new ImageIcon(defaultImg);
+                } else {
+                    // Nếu không có ảnh mặc định, dùng ảnh unknown
+                    java.net.URL unknownUrl = getClass().getResource("/Icons/Food/Unknown/unknown.jpg");
+                    java.awt.Image unknownImg = javax.imageio.ImageIO.read(unknownUrl);
+                    icon = new ImageIcon(unknownImg);
+                }
             }
-            list.add(data);
+        } catch (Exception e) {
+            System.err.println("Lỗi tải ảnh cho món " + id + ": " + e.getMessage());
+            // Trong trường hợp lỗi, tạo một ImageIcon rỗng để tránh null pointer
+            icon = new ImageIcon();
         }
-        r.close();
-        p.close();
-        return list;
+        
+        ModelMonAn data = new ModelMonAn(icon, id, name, value, type);
+        list.add(data);
     }
+    r.close();
+    p.close();
+    return list;
+}
 
     //Lấy danh sách Món ăn theo loại món ăn và thứ tự Tên/Giá tăng dần/Giá giảm dần đang kinh doanh
-    public ArrayList<ModelMonAn> MenuFoodOrder(String type, String orderBy) throws SQLException {
-        ArrayList<ModelMonAn> list = new ArrayList<>();
+public ArrayList<ModelMonAn> MenuFoodOrder(String type, String orderBy) throws SQLException {
+    ArrayList<ModelMonAn> list = new ArrayList<>();
 
-        String sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh'";
-        switch (orderBy) {
-            case "Tên A->Z" -> {
-                sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh' ORDER BY TenMon";
-            }
-            case "Giá tăng dần" -> {
-                sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh' ORDER BY DonGia";
-            }
-            case "Giá giảm dần" -> {
-                sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh' ORDER BY DonGia DESC";
-            }
+    String sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh'";
+    switch (orderBy) {
+        case "Tên A->Z" -> {
+            sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh' ORDER BY TenMon";
         }
-        PreparedStatement p = con.prepareStatement(sql);
-        p.setString(1, type);
-
-        ResultSet r = p.executeQuery();
-        while (r.next()) {
-            int id = r.getInt("ID_MonAn");
-            String name = r.getString("TenMon");
-            int value = r.getInt("DonGia");
-            ModelMonAn data;
-            if (id < 90) {
-                data = new ModelMonAn(new ImageIcon(getClass().getResource("/Icons/Food/" + type + "/" + id + ".jpg")), id, name, value, type);
-            } else {
-                data = new ModelMonAn(new ImageIcon(getClass().getResource("/Icons/Food/Unknown/unknown.jpg")), id, name, value, type);
-            }
-            list.add(data);
+        case "Giá tăng dần" -> {
+            sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh' ORDER BY DonGia";
         }
-        r.close();
-        p.close();
-        return list;
+        case "Giá giảm dần" -> {
+            sql = "SELECT ID_MonAn,TenMon,DonGia FROM MonAn WHERE Loai=? AND TrangThai='Dang kinh doanh' ORDER BY DonGia DESC";
+        }
     }
+    PreparedStatement p = con.prepareStatement(sql);
+    p.setString(1, type);
 
+    ResultSet r = p.executeQuery();
+    while (r.next()) {
+        int id = r.getInt("ID_MonAn");
+        String name = r.getString("TenMon");
+        int value = r.getInt("DonGia");
+        
+        // Tạo đường dẫn tương đối đến ảnh
+        String imagePath = "/Icons/Food/" + type + "/" + id + ".jpg";
+        ImageIcon icon = null;
+        
+        try {
+            // Tải ảnh mới mỗi lần bằng cách dùng URL và đọc trực tiếp từ file
+            java.net.URL imageUrl = getClass().getResource(imagePath);
+            if (imageUrl != null) {
+                // Đọc ảnh từ URL để tránh cache
+                java.awt.Image img = javax.imageio.ImageIO.read(imageUrl);
+                icon = new ImageIcon(img);
+            } else {
+                // Nếu không tìm thấy, sử dụng ảnh mặc định
+                java.net.URL defaultUrl = getClass().getResource("/Icons/Food/" + type + "/default.jpg");
+                if (defaultUrl != null) {
+                    java.awt.Image defaultImg = javax.imageio.ImageIO.read(defaultUrl);
+                    icon = new ImageIcon(defaultImg);
+                } else {
+                    // Nếu không có ảnh mặc định, dùng ảnh unknown
+                    java.net.URL unknownUrl = getClass().getResource("/Icons/Food/Unknown/unknown.jpg");
+                    java.awt.Image unknownImg = javax.imageio.ImageIO.read(unknownUrl);
+                    icon = new ImageIcon(unknownImg);
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Lỗi tải ảnh cho món " + id + ": " + e.getMessage());
+            // Trong trường hợp lỗi, tạo một ImageIcon rỗng để tránh null pointer
+            icon = new ImageIcon();
+        }
+        
+        ModelMonAn data = new ModelMonAn(icon, id, name, value, type);
+        list.add(data);
+    }
+    r.close();
+    p.close();
+    return list;
+}
     //Lấy toàn bộ danh sách bàn theo tầng
     public ArrayList<ModelBan> MenuTable(String floor) throws SQLException {
         ArrayList<ModelBan> list = new ArrayList<>();
@@ -228,13 +279,13 @@ public class ServiceCustomer {
      */
     public void InsertHoaDon(ModelBan table, ModelKhachHang customer) throws SQLException {
         //Tìm ID_HD tiếp theo
-        int idHD=0;
-        PreparedStatement p_ID=con.prepareStatement("SELECT MAX(ID_HoaDon) +1 FROM HoaDon");
-        ResultSet r_id=p_ID.executeQuery();
-        if(r_id.next()){
-            idHD=r_id.getInt(1);
+        int idHD = 0;
+        PreparedStatement p_ID = con.prepareStatement("SELECT MAX(ID_HoaDon) +1 FROM HoaDon");
+        ResultSet r_id = p_ID.executeQuery();
+        if (r_id.next()) {
+            idHD = r_id.getInt(1);
         }
-       
+
         //Thêm Hoá Đơn mới
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-YYYY");
         String sql = "INSERT INTO HoaDon(ID_HoaDon,ID_KH,ID_Ban,NgayHD,TienMonAn,TienGiam,Trangthai)"
@@ -244,15 +295,14 @@ public class ServiceCustomer {
         p.setInt(2, customer.getID_KH());
         p.setInt(3, table.getID());
         p.setString(4, simpleDateFormat.format(new Date()));
-        javax.swing.JOptionPane.showMessageDialog(null, 
-        "Đặt bàn thành công!", 
-        "Thông báo", 
-        javax.swing.JOptionPane.INFORMATION_MESSAGE);
         p_ID.close();
         r_id.close();
         p.execute();
         p.close();
-
+        javax.swing.JOptionPane.showMessageDialog(null,
+                "Đặt bàn thành công!",
+                "Thông báo",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }
 
     //Lấy thông tin HoaDon mà Khách hàng vừa đặt, Hóa Đơn có trạng thái 'Chưa thanh toán'
@@ -288,6 +338,7 @@ public class ServiceCustomer {
         p.setInt(1, ID_HoaDon);
         p.setInt(2, ID_MonAn);
         ResultSet r = p.executeQuery();
+        if (soluong <= 0)  return;
         if (r.next()) {
             // Nếu tồn tại 
             String sql_update = "UPDATE CTHD SET SoLuong=SoLuong+? WHERE ID_HoaDon=? AND ID_MonAn=?";
@@ -295,6 +346,10 @@ public class ServiceCustomer {
             p1.setInt(1, soluong);
             p1.setInt(2, ID_HoaDon);
             p1.setInt(3, ID_MonAn);
+            javax.swing.JOptionPane.showMessageDialog(null,
+                    "Gọi món thành công!",
+                    "Thông báo",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
             p1.execute();
             p1.close();
         } else {
@@ -304,6 +359,10 @@ public class ServiceCustomer {
             p1.setInt(1, ID_HoaDon);
             p1.setInt(2, ID_MonAn);
             p1.setInt(3, soluong);
+            javax.swing.JOptionPane.showMessageDialog(null,
+                    "Gọi món thành công!",
+                    "Thông báo",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
             p1.execute();
             p1.close();
         }

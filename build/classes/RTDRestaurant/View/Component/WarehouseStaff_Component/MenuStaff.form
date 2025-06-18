@@ -89,7 +89,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Icons/warehouse.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;Warehouse Management&lt;br&gt; Restaurant &#x2605;&#x2605;&#x2605;&#x2605;&#x2605;&lt;/html&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;Qu&#x1ea3;n l&#xfd; kho&lt;br&gt; Nh&#xe0; h&#xe0;ng Quen Loan&lt;/html&gt;"/>
         <Property name="iconTextGap" type="int" value="15"/>
       </Properties>
     </Component>

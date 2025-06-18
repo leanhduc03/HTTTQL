@@ -42,11 +42,14 @@ public class Menu extends javax.swing.JPanel {
     //Khởi tạo data cho Menu 
     public void initMenuItem() {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/astrology.png")), "Thực đơn", "Gà", "Vịt", "Ếch", "Bò",
-                "Bò", "Hải Sản", "Rau", "Lẩu", "Nướng", "Khai vị", "Đồ uống", "Tráng miệng"));
+                "Lợn", "Hải Sản", "Rau", "Lẩu", "Ngựa", "Dê", "Đồ uống", "Tráng miệng"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/table.png")), "Đặt bàn", "Tầng 1", "Tầng 2", "Tầng 3"));
         addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(null, ""));
+        addMenu(new ModelMenu(null, ""));
+        addMenu(new ModelMenu(null, ""));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/user.png")), "Tài Khoản"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/star.png")), ""));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/invoice.png")), "Lịch sử hóa đơn"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/Icons/MenuBar/logout.png")), "Đăng Xuất"));
     }

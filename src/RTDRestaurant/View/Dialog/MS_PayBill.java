@@ -111,7 +111,7 @@ public class MS_PayBill extends javax.swing.JDialog {
         lbTitle.setFont(new java.awt.Font("Sylfaen", 1, 26)); // NOI18N
         lbTitle.setForeground(new java.awt.Color(108, 91, 123));
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Royal TheDreamers Restaurant");
+        lbTitle.setText("Nhà Hàng Quen Loan");
 
         jSeparator1.setBackground(new java.awt.Color(76, 76, 76));
 

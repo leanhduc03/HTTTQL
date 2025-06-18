@@ -23,37 +23,52 @@ public class ImageFood extends JComponent {
         this.icon = icon;
     }
 
-
     private Icon icon;
 
     public ImageFood() {
     }
-    
-    
+
     @Override
     protected void paintComponent(Graphics g) {
         //Draw Image
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        Rectangle size=getAutoSize(icon);
-        g2.drawImage(toImage(icon), size.x, size.y,size.width,size.height,null);
-        super.paintComponent(g); 
+        Rectangle size = getAutoSize(icon);
+        g2.drawImage(toImage(icon), size.x, size.y, size.width, size.height, null);
+        super.paintComponent(g);
     }
-    
+
     //Fix kích thước ảnh
-    private Rectangle getAutoSize(Icon image){
-        int w=300;
-        int h=150;
-        int iw=image.getIconWidth();
-        int ih=image.getIconHeight();
-        double xScale=(double)w/iw;
-        double yScale=(double)h/ih;
-        double scale=Math.max(xScale, yScale);
-        int width=(int)(iw*scale);
-        int height=(int)(ih*scale);
-        int x=(w-width)/2;
-        int y=(h-height)/2;
-        return new Rectangle(new Point(x,y),new Dimension(width, height));
+    private Rectangle getAutoSize(Icon image) {
+        int w = getWidth();
+        int h = getHeight();
+
+        // Đảm bảo kích thước tối thiểu
+        if (w < 10) {
+            w = 300;
+        }
+        if (h < 10) {
+            h = 150;
+        }
+
+        int iw = image.getIconWidth();
+        int ih = image.getIconHeight();
+
+        // Tính toán tỷ lệ để hình ảnh vừa với khung và giữ nguyên tỷ lệ khung hình
+        double xScale = (double) w / iw;
+        double yScale = (double) h / ih;
+
+        // Sử dụng tỷ lệ nhỏ hơn để đảm bảo hình ảnh vừa với khung
+        double scale = Math.min(xScale, yScale);
+
+        int width = (int) (iw * scale);
+        int height = (int) (ih * scale);
+
+        // Căn giữa hình ảnh trong khung
+        int x = (w - width) / 2;
+        int y = (h - height) / 2;
+
+        return new Rectangle(new Point(x, y), new Dimension(width, height));
     }
 
     private Image toImage(Icon icon) {

@@ -51,7 +51,7 @@ public class AboutUs_Form extends javax.swing.JPanel {
         wel.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         wel.setForeground(new java.awt.Color(63, 63, 63));
         wel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        wel.setText("<html>  Welcome to  <i style=\"color:rgb(108,91,123);font-size:16px;\">  ROYAL THEDREAMERS<i> </html>");
+        wel.setText("<html>  Welcome to  <i style=\"color:rgb(108,91,123);font-size:16px;\">  Nhà Hàng Quen Loan<i> </html>");
 
         jScrollPane2.setBorder(null);
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);

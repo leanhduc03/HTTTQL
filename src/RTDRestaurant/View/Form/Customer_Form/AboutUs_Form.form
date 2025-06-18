@@ -139,7 +139,7 @@
               <Color blue="3f" green="3f" red="3f" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;  Welcome to  &lt;i style=&quot;color:rgb(108,91,123);font-size:16px;&quot;&gt;  ROYAL THEDREAMERS&lt;i&gt; &lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;  Welcome to  &lt;i style=&quot;color:rgb(108,91,123);font-size:16px;&quot;&gt;  Nhà Hàng Quen Loan&lt;i&gt; &lt;/html&gt;"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">

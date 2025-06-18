@@ -15,12 +15,12 @@ import java.text.DecimalFormat;
 
 public class CardMonAn extends javax.swing.JPanel {
 
-    private  ModelMonAn data;
+    private ModelMonAn data;
     private MS_ConfirmOrderFood obj;
     private ModelHoaDon HoaDon;
-   
-    public CardMonAn(ModelMonAn data,ModelHoaDon HoaDon) {
-        this.HoaDon=HoaDon;
+
+    public CardMonAn(ModelMonAn data, ModelHoaDon HoaDon) {
+        this.HoaDon = HoaDon;
         this.data = data;
         initComponents();
         init();
@@ -34,10 +34,24 @@ public class CardMonAn extends javax.swing.JPanel {
         lbTitle.setText(data.getTitle());
         DecimalFormat df = new DecimalFormat("##,###,###");
         lbValue.setText(df.format(data.getValue()) + "đ");
-        cmdOrder.addActionListener(new ActionListener(){
+        cmdOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                obj.ConfirmOrder(data, Integer.parseInt(txtNum.getText()),HoaDon.getIdHoaDon());
+                if (Integer.parseInt(txtNum.getText()) <= 0) {
+                    javax.swing.JOptionPane.showMessageDialog(null,
+                            "Số lượng món không hợp lệ!",
+                            "Thông báo",
+                            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                };
+                if (Integer.parseInt(txtNum.getText()) > 50) {
+                    javax.swing.JOptionPane.showMessageDialog(null,
+                            "Số lượng món lớn. Vui lòng liên hệ quản lý!",
+                            "Thông báo",
+                            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                };
+                obj.ConfirmOrder(data, Integer.parseInt(txtNum.getText()), HoaDon.getIdHoaDon());
                 txtNum.setText("0");
             }
         });
@@ -157,8 +171,8 @@ public class CardMonAn extends javax.swing.JPanel {
         Graphics2D g2 = (Graphics2D) g;
         g2.setColor(getBackground());
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20,20);
-        
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
+
         super.paintComponent(g);
     }
 

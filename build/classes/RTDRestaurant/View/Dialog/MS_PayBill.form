@@ -163,7 +163,7 @@
               <Color blue="7b" green="5b" red="6c" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Royal TheDreamers Restaurant"/>
+            <Property name="text" type="java.lang.String" value="Nhà Hàng Quen Loan"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">

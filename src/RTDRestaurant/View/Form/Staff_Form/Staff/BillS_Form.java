@@ -427,7 +427,7 @@ public class BillS_Form extends javax.swing.JPanel {
         PDPage newpage = new PDPage();
         //Thêm trang trống
         invc.addPage(newpage);
-        String title = "Royal TheDreamers Restaurant";
+        String title = " Nhà Hàng Quen Loan";
         String subtitle = "HOA DON THANH TOAN";
         String footer="THANK YOU FOR YOU PURCHASE";
         String tenKH = "";
