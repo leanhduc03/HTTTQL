@@ -150,14 +150,14 @@ public class ServiceAdmin {
     //Lấy tổng doanh thu Hóa Đơn trong ngày/tháng/năm
     public int getRevenueHD(String filter) throws SQLException {
         int revenue = 0;
-        
+
         String sql = "SELECT SUM(Tongtien) FROM HoaDon WHERE TO_DATE(NgayHD,'dd-mm-YYYY')=TO_DATE(CURRENT_DATE,'dd-mm-YYYY')";
-        if(filter.equals("Hôm nay")){
+        if (filter.equals("Hôm nay")) {
             sql = "SELECT SUM(Tongtien) FROM HoaDon WHERE TO_DATE(NgayHD,'dd-mm-YYYY')=TO_DATE(CURRENT_DATE,'dd-mm-YYYY')";
-        }else if(filter.equals("Tháng này")){
+        } else if (filter.equals("Tháng này")) {
             sql = "SELECT SUM(Tongtien) FROM HoaDon WHERE EXTRACT(MONTH FROM NgayHD)=EXTRACT(MONTH FROM CURRENT_DATE) "
                     + "AND EXTRACT(YEAR FROM NgayHD)=EXTRACT(YEAR FROM CURRENT_DATE)";
-        }else if((filter.equals("Năm này"))){
+        } else if ((filter.equals("Năm này"))) {
             sql = "SELECT SUM(Tongtien) FROM HoaDon WHERE EXTRACT(YEAR FROM NgayHD)=EXTRACT(YEAR FROM CURRENT_DATE)";
         }
         PreparedStatement p = con.prepareStatement(sql);
@@ -169,12 +169,13 @@ public class ServiceAdmin {
         r.close();
         return revenue;
     }
+
     //Lấy tổng doanh thu Hóa Đơn của tháng trước
     public int getPreMonthRevenueHD() throws SQLException {
-        int Pre_revenue = 0;  
-        String sql =  "SELECT SUM(Tongtien) FROM HoaDon WHERE EXTRACT(MONTH FROM NgayHD)=(EXTRACT(MONTH FROM CURRENT_DATE)-1) "
-                    + "AND EXTRACT(YEAR FROM NgayHD)=EXTRACT(YEAR FROM CURRENT_DATE)";
-        
+        int Pre_revenue = 0;
+        String sql = "SELECT SUM(Tongtien) FROM HoaDon WHERE EXTRACT(MONTH FROM NgayHD)=(EXTRACT(MONTH FROM CURRENT_DATE)-1) "
+                + "AND EXTRACT(YEAR FROM NgayHD)=EXTRACT(YEAR FROM CURRENT_DATE)";
+
         PreparedStatement p = con.prepareStatement(sql);
         ResultSet r = p.executeQuery();
         if (r.next()) {
@@ -184,7 +185,6 @@ public class ServiceAdmin {
         r.close();
         return Pre_revenue;
     }
-    
 
     //Lấy toàn bộ danh sách Phiếu Nhập Kho trong Tất cả/ngày/tháng/năm
     public ArrayList<ModelPNK> getListPNKIn(String txt) throws SQLException {
@@ -220,14 +220,14 @@ public class ServiceAdmin {
     //Lấy tổng chi phí Nhập kho trong ngày/tháng/năm
     public int getCostNK(String filter) throws SQLException {
         int revenue = 0;
-        
+
         String sql = "SELECT SUM(Tongtien) FROM PhieuNK WHERE TO_DATE(NgayNK,'dd-mm-YYYY')=TO_DATE(CURRENT_DATE,'dd-mm-YYYY')";
-        if(filter.equals("Hôm nay")){
+        if (filter.equals("Hôm nay")) {
             sql = "SELECT SUM(Tongtien) FROM PhieuNK WHERE TO_DATE(NgayNK,'dd-mm-YYYY')=TO_DATE(CURRENT_DATE,'dd-mm-YYYY')";
-        }else if(filter.equals("Tháng này")){
+        } else if (filter.equals("Tháng này")) {
             sql = "SELECT SUM(Tongtien) FROM PhieuNK WHERE EXTRACT(MONTH FROM NgayNK)=EXTRACT(MONTH FROM CURRENT_DATE) "
                     + "AND EXTRACT(YEAR FROM NgayNK)=EXTRACT(YEAR FROM CURRENT_DATE)";
-        }else if((filter.equals("Năm này"))){
+        } else if ((filter.equals("Năm này"))) {
             sql = "SELECT SUM(Tongtien) FROM PhieuNK WHERE EXTRACT(YEAR FROM NgayNK)=EXTRACT(YEAR FROM CURRENT_DATE)";
         }
         PreparedStatement p = con.prepareStatement(sql);
@@ -239,12 +239,13 @@ public class ServiceAdmin {
         r.close();
         return revenue;
     }
+
     //Lấy tổng chi phí Nhập Kho của tháng trước
     public int getPreMonthCostNK() throws SQLException {
-        int Pre_Cost = 0;  
-        String sql =  "SELECT SUM(Tongtien) FROM PhieuNK WHERE EXTRACT(MONTH FROM NgayNK)=(EXTRACT(MONTH FROM CURRENT_DATE)-1) "
-                    + "AND EXTRACT(YEAR FROM NgayNK)=EXTRACT(YEAR FROM CURRENT_DATE)";
-        
+        int Pre_Cost = 0;
+        String sql = "SELECT SUM(Tongtien) FROM PhieuNK WHERE EXTRACT(MONTH FROM NgayNK)=(EXTRACT(MONTH FROM CURRENT_DATE)-1) "
+                + "AND EXTRACT(YEAR FROM NgayNK)=EXTRACT(YEAR FROM CURRENT_DATE)";
+
         PreparedStatement p = con.prepareStatement(sql);
         ResultSet r = p.executeQuery();
         if (r.next()) {
@@ -256,25 +257,26 @@ public class ServiceAdmin {
     }
 
     //Lấy toàn bộ doanh thu, chi phí, lợi nhuận của từng tháng trong năm
-    public ArrayList<ModelChart> getRevenueCostProfit_byMonth() throws SQLException{
-        ArrayList<ModelChart> list=new ArrayList<>();
-        String sql_Revenue="SELECT EXTRACT(MONTH FROM NgayHD) as Thang, SUM(TONGTIEN) FROM HoaDon WHERE EXTRACT(YEAR FROM NgayHD)=EXTRACT(YEAR FROM CURRENT_DATE) "
+    public ArrayList<ModelChart> getRevenueCostProfit_byMonth() throws SQLException {
+        ArrayList<ModelChart> list = new ArrayList<>();
+        String sql_Revenue = "SELECT EXTRACT(MONTH FROM NgayHD) as Thang, SUM(TONGTIEN) FROM HoaDon WHERE EXTRACT(YEAR FROM NgayHD)=EXTRACT(YEAR FROM CURRENT_DATE) "
                 + "GROUP BY EXTRACT(MONTH FROM NgayHD) ORDER BY Thang";
-        String sql_Cost="SELECT EXTRACT(MONTH FROM NgayNK) as Thang, SUM(TONGTIEN) FROM PhieuNK WHERE EXTRACT(YEAR FROM NgayNK)=EXTRACT(YEAR FROM CURRENT_DATE) "
+        String sql_Cost = "SELECT EXTRACT(MONTH FROM NgayNK) as Thang, SUM(TONGTIEN) FROM PhieuNK WHERE EXTRACT(YEAR FROM NgayNK)=EXTRACT(YEAR FROM CURRENT_DATE) "
                 + "GROUP BY EXTRACT(MONTH FROM NgayNK) ORDER BY Thang";
         PreparedStatement p_R = con.prepareStatement(sql_Revenue);
         PreparedStatement p_C = con.prepareStatement(sql_Cost);
-        ResultSet r_R=p_R.executeQuery();
-        ResultSet r_C=p_C.executeQuery();
-        while(r_R.next() && r_C.next()){
-            int revenue=r_R.getInt(2);
-            int expenses=r_C.getInt(2);
-            int profit=revenue-expenses;
-            ModelChart data=new ModelChart("Tháng "+r_R.getInt(1), new double[]{revenue,expenses,profit});
+        ResultSet r_R = p_R.executeQuery();
+        ResultSet r_C = p_C.executeQuery();
+        while (r_R.next() && r_C.next()) {
+            int revenue = r_R.getInt(2);
+            int expenses = r_C.getInt(2);
+            int profit = revenue - expenses;
+            ModelChart data = new ModelChart("Tháng " + r_R.getInt(1), new double[]{revenue, expenses, profit});
             list.add(data);
         }
         return list;
     }
+
     //Lấy toàn bộ danh sách Món ăn theo loại Món Ăn
     public ArrayList<ModelMonAn> getMenuFood() throws SQLException {
         ArrayList<ModelMonAn> list = new ArrayList<>();
@@ -286,12 +288,12 @@ public class ServiceAdmin {
             String name = r.getString("TenMon");
             int value = r.getInt("DonGia");
             String type = r.getString("Loai");
-            String state =r.getString("TrangThai");
+            String state = r.getString("TrangThai");
             ModelMonAn data;
             if (id < 90) {
-                data = new ModelMonAn(new ImageIcon(getClass().getResource("/Icons/Food/" + type + "/" + id + ".jpg")), id, name, value, type,state);
+                data = new ModelMonAn(new ImageIcon(getClass().getResource("/Icons/Food/" + type + "/" + id + ".jpg")), id, name, value, type, state);
             } else {
-                data = new ModelMonAn(new ImageIcon(getClass().getResource("/Icons/Food/Unknown/unknown.jpg")), id, name, value, type,state);
+                data = new ModelMonAn(new ImageIcon(getClass().getResource("/Icons/Food/Unknown/unknown.jpg")), id, name, value, type, state);
             }
             list.add(data);
         }
@@ -299,17 +301,19 @@ public class ServiceAdmin {
         p.close();
         return list;
     }
+
     //Lấy số lượng món ăn đang kinh doanh
-    public int getNumberFood_inBusiness() throws SQLException{
-        int number=0;
-        String sql="SELECT COUNT(*) FROM MonAn WHERE TrangThai='Dang kinh doanh'";
-        PreparedStatement p=con.prepareStatement(sql);
-        ResultSet r=p.executeQuery();
-        if(r.next()){
-            number=r.getInt(1);
+    public int getNumberFood_inBusiness() throws SQLException {
+        int number = 0;
+        String sql = "SELECT COUNT(*) FROM MonAn WHERE TrangThai='Dang kinh doanh'";
+        PreparedStatement p = con.prepareStatement(sql);
+        ResultSet r = p.executeQuery();
+        if (r.next()) {
+            number = r.getInt(1);
         }
         return number;
     }
+
     //Lấy Mã Món Ăn tiếp theo được thêm
     public int getNextID_MA() throws SQLException {
         int id = 0;
@@ -321,6 +325,7 @@ public class ServiceAdmin {
         }
         return id;
     }
+
     //Thêm mới một Món Ăn
     public void insertMA(ModelMonAn data) throws SQLException {
         String sql = "insert into MonAn(ID_MonAn,TenMon,Dongia,Loai,TrangThai) values(?,?, ?,?,'Dang kinh doanh')";
@@ -329,17 +334,27 @@ public class ServiceAdmin {
         p.setString(2, data.getTitle());
         p.setInt(3, data.getValue());
         p.setString(4, data.getType());
+        javax.swing.JOptionPane.showMessageDialog(null,
+                "Thêm món thành công!",
+                "Thông báo",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
         p.execute();
         p.close();
     }
+
     //Ngưng kinh doanh một món ăn (Cập nhật TrangThai='Ngung kinh doanh')
     public void StopSell(int idMA) throws SQLException {
         String sql = "UPDATE MonAn SET TrangThai = 'Ngung kinh doanh' WHERE ID_MonAn=?";
         PreparedStatement p = con.prepareStatement(sql);
         p.setInt(1, idMA);
+        javax.swing.JOptionPane.showMessageDialog(null,
+                "Đã ngưng kinh doanh!",
+                "Thông báo",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
         p.execute();
         p.close();
     }
+
     //Kinh doanh trở lại một món ăn (Cập nhật TrangThai='Dang kinh doanh')
     public void BackSell(int idMA) throws SQLException {
         String sql = "UPDATE MonAn SET TrangThai = 'Dang kinh doanh' WHERE ID_MonAn=?";
@@ -348,6 +363,7 @@ public class ServiceAdmin {
         p.execute();
         p.close();
     }
+
     //Cập nhật thông tin của một Món ăn
     public void UpdateMonAn(ModelMonAn data) throws SQLException {
         String sql = "UPDATE MonAn SET TenMon=?,Dongia=?,Loai=? WHERE ID_MonAn=?";
@@ -356,6 +372,10 @@ public class ServiceAdmin {
         p.setInt(2, data.getValue());
         p.setString(3, data.getType());
         p.setInt(4, data.getId());
+        javax.swing.JOptionPane.showMessageDialog(null,
+                "Cập nhật thành công!",
+                "Thông báo",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
         p.execute();
         p.close();
     }
